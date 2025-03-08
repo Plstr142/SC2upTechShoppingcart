@@ -1,0 +1,475 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+} */
+/* @import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"; */
+
+header {
+    width: 100%;
+    background: #D04242FF;
+    display: flex
+}
+
+section {
+    width: 100%;
+    background: #A2A9BAFF;
+}
+
+.footer {
+    width: 100%;
+    background: #5488FFFF;
+}
+
+div .text1 {
+    display: flex;
+    justify-content: center; 
+    /* align-items: center;  */
+}
+
+div .header-form {
+    display: flex;
+    justify-content: center; 
+}
+
+/* card */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.card-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    /* max-width: 350px;
+    min-width: 300px; */
+    aspect-ratio: 4/3;
+    /* padding: 10px; */
+    margin: 10px;
+    justify-content: center;
+}
+
+.card {
+    width: 100%;
+    height: 450px; 
+    /* height: 380px;  */
+    /* max-width: 350px; */
+    max-width: 350px;
+    min-height: 350px;
+    max-height: 450px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    /* box-shadow: 6px 6px 2px rgba(23, 34, 1232, 0.1); */
+    box-shadow: 0 24px 16px rgba(23, 34, 1232, 0.1), 0 0px 0px rgba(23, 21, 1232, 021);
+    /* box-shadow: 0 24px 16px rgba(45, 213, 12, 0.1), 0 0px 0px rgba(232, 22, 232, 01); */
+
+
+    /* box-shadow: -6px 6px 2px rgba(23, 34, 123, 0.1), 6px 6px 2px rgba(23, 34, 123, 0.1); */
+}
+
+.card img {
+    width: 100%; /* ให้รูปภาพกว้างเต็มการ์ด */
+    height: 50%; /* กำหนดความสูงให้เท่ากัน */
+    /* max-height: 200px;  */
+    object-fit: cover; /* ป้องกันรูปภาพผิดสัดส่วน */
+}
+
+.card-body {
+    flex-grow: 1; /* ทำให้ข้อความขยายและจัดให้สมดุล */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    word-wrap: break-word; /* ป้องกันข้อความล้น */
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgba(0, 34, 0, 0.1) , rgba(11, 54, 24, 12 ));
+}
+
+/* .container-detail {
+    position: relative;
+    max-height: 60px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    outline: 2px solid #000;
+    background-color: #f8f9fa;
+    padding: 10px;
+} */
+
+/* ::-webkit-scrollbar {
+    width: 1em;
+}
+::-webkit-scrollbar {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar {
+    background-color: black;
+    outline: 1px solid black;
+} */
+
+.container-detail {
+    width: 300px; /* ความกว้างของกล่อง */
+    max-height: 200px;
+    overflow-x: auto; /* ทำให้สามารถเลื่อนในแนวนอนได้ */
+    white-space: nowrap; /* ป้องกันข้อความขึ้นบรรทัดใหม่ */
+    /* border: 2px solid black; */
+    padding: 10px;
+}
+
+.card-title,  {
+    /* text-align: center;  */
+    font-size: 1.2rem;
+    font-weight: bold;
+    justify-self: center; 
+}
+
+.card-text {
+    /* font-size: 1rem; */
+    /* flex-grow: 1; */
+    width: 600px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* max-height: 24px; */
+    max-height: 60px; /* จำกัดความสูงเริ่มต้นของข้อความ */
+    transition: max-height 0.3s ease-in-out;
+    /* transition: all 0.3s ease-in-out; /* ทำให้เปลี่ยนสถานะลื่นไหล */ */
+}
+
+.card-text.expanded{
+    white-space: normal;
+    overflow-y: auto; /* เพิ่ม Scroll Bar ด้านขวา */
+    /* max-height: 500px; */
+    max-height: 200px; /* กำหนดความสูงสูงสุดเมื่อกด See More */
+    text-overflow: clip;
+    padding-right: 5px; /* เว้นระยะให้ Scroll Bar ไม่ทับข้อความ */
+}
+
+.see-more-btn {
+    background: none;
+    border: none;
+    color: blue;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.btn {
+    align-self: center;
+    /* width: 50px; */
+    background-color: #7CD1B5FF;
+    border: 2px solid #000000FF;
+    color: black;
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.btn-promode-code{
+    align-self: center;
+    background-color: #3E2ED2FF;
+    border: 2px solid #000000FF;
+    color: black;
+    margin: 8px 16px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* th,
+td {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+th {
+    background-color: rgb(145, 144, 137);
+    text-align: start;
+} */
+tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+
+tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+
+tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+/* tr:first-child th:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+tr:first-child th:last-child {
+    border-bottom-right-radius: 10px;
+} */
+
+/* div .form2 {
+    display: flex;
+    justify-content: center; 
+    border-radius: 5px;
+    /* box-shadow: 0 0 5px rgba(56, 161, 156, 0.53) */
+    /* box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12) */
+/* } */ 
+
+
+/* div .form2:nth-child(1) {
+    display: flex; 
+    justify-content: center; 
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(56, 161, 156, 0.53)
+    box-shadow: 0.24rem 0.24rem black;
+}     */
+.header-btn input {
+    box-shadow: 0.24rem 0.24rem black;
+    border-radius: 5px; 
+    padding: 10px;
+    border: 1px solid #ccc; 
+    box-shadow: 0 0 5px rgba(56, 161, 156, 0.53)
+    box-shadow: 0.24rem 0.24rem black;
+}
+
+.header-btn textarea {
+    box-shadow: 0.24rem 0.24rem black;
+    border-radius: 5px; 
+    padding: 10px;
+    border: 1px solid #ccc; 
+    box-shadow: 0 0 5px rgba(56, 161, 156, 0.53)
+    box-shadow: 0.24rem 0.24rem black;
+}
+
+.header-btn .text-style-form {
+    color: white;
+}
+
+header-cart {
+    width: 100%;
+    height: 16vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('assets/images/background-pattern.png') no-repeat center center/cover;
+    animation: bgAnimation 50s infinite alternate;
+}
+
+#basket {
+    width:56px;
+    height: 30px;
+    animation: rotate 2.8s infinite linear;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 14px;
+    /* outline: 2px solid white; */
+    /* border-radius: 5px; */
+}
+
+@keyframes rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@keyframes bgAnimation {
+    0% { background-color: #B28883FF; }   
+    25% { background-color: #F4FFC4FF; } 
+    50% { background-color: #8BB09BFF; } 
+    75% { background-color: #B4B1CDE7; }  
+    100% { background-color: #3D3D3DFF; } 
+}
+
+.cart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 50vh;
+    /* background: url('assets/images/background-pattern.png');  */
+    /* animation: bgAnimation 5s infinite alternate; */
+    /* border-radius: 10px; */
+}
+
+/* ************** compare ************** */
+
+/* .header-btn div input{
+    box-shadow: 0.24rem 0.24rem black;
+    border-radius: 5px; 
+    padding: 10px;
+    border: 1px solid #ccc; 
+    box-shadow: 0 0 5px rgba(56, 161, 156, 0.53)
+    box-shadow: 0.24rem 0.24rem black;
+} */
+
+
+
+
+/* ************** compare ************** */
+/* nav {
+    width: 100%;
+    background: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo {
+    display: flex;
+    width: 200px;
+    height: 100px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ul-menu {
+    display: flex;
+}
+
+.ul-menu li {
+    list-style: none;
+}
+
+.ul-menu li a {
+    text-decoration: none;
+    color: black;
+    background: white;
+    padding: 10px;
+    margin: 0 10px;
+    transition: .4s;
+}
+
+.ul-menu li a:hover {
+    color: #6C8CBCFF;
+}
+
+.btn-signin {
+    color: #fff;
+    background: #3498db;
+    font-size: 1.2rem;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.btn-signin:hover {
+    opacity: 0.8;
+    color: #AAFFDBCB;
+}
+
+.containerC {
+    max-width: 1000px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 480px;
+    height: 480px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(56, 161, 156, 0.53);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
+
+/* .card img {
+    width: 100px;
+    height: 100px;
+} */
+
+/* .card-top {
+    background: yellow;
+    padding: 50px; 
+    height: 100%;
+}
+
+.card-top-title-profile {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.card-top-title-profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-top-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px; */
+    /* background: black; */
+/* }
+.card-top-title-name {
+    background: blue;
+    margin-left: 20px;
+}
+
+.card-top-title-name p {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-bottom: 1px;
+}
+
+.card-top-title-name span {
+    font-size: 1rem;
+    margin-top: 1px;
+    color: #adadad;
+}
+
+.card-top-detail h4 {
+    font-size: 1.5rem;
+    background: blue;
+    margin-bottom: 20px;
+}
+
+.card-top-detail p {
+    font-size: 1.2rem;
+    color: #adadad;
+}
+
+.card-bottom {
+    display: flex;
+    background: red;
+    padding: 30px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.clip,
+.report {
+    font-size: 1rem;
+    color: #black;
+    cursor: pointer;
+}
+.time {
+    font-size: 1rem;
+    color: #black;   
+} */
